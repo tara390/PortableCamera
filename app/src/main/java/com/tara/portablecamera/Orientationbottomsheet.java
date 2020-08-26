@@ -14,15 +14,16 @@ import android.widget.TextView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 
-public class BottomSheetDialog extends BottomSheetDialogFragment {
+public class Orientationbottomsheet extends BottomSheetDialogFragment {
 
-    TextView tv19201080,tv1280720,textView5,button;
+    TextView tvauto,tvportrait,tvlandscape,bcancel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable
             ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         setStyle(DialogFragment.STYLE_NO_FRAME,R.style.AppBottomSheetDialogTheme);
-        View v = inflater.inflate(R.layout.fragment_bottom_sheet_dialog,
+        View v = inflater.inflate(R.layout.fragment_orientationbottomsheet,
                 container, false);
         init(v);
 
@@ -31,16 +32,21 @@ public class BottomSheetDialog extends BottomSheetDialogFragment {
 
     private void init(View v) {
 
-        tv19201080=v.findViewById(R.id.tv19201080);
-        tv1280720=v.findViewById(R.id.tv1280720);
-        textView5=v.findViewById(R.id.textView5);
-        button=v.findViewById(R.id.button);
+        bcancel=v.findViewById(R.id.bcancel);
+        tvauto=v.findViewById(R.id.tvauto);
+        tvlandscape=v.findViewById(R.id.tvlandscape);
+        tvportrait=v.findViewById(R.id.tvportrait);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        bcancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();
             }
         });
+
+
+
     }
+
+
 }

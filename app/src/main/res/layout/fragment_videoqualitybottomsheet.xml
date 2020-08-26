@@ -9,35 +9,34 @@
     android:padding="10dp">
 
     <TextView
-        android:id="@+id/tv19201080"
+        android:id="@+id/tvhd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
-
         android:padding="10dp"
-        android:text="1920*1080"
+        android:text="HD"
         android:textSize="20sp" />
 
 
     <TextView
-        android:id="@+id/tv1280720"
+        android:id="@+id/tvmedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:padding="10dp"
-        android:text="1280*720"
+        android:text="Medium"
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvLow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:padding="10dp"
-        android:text="800*480"
+        android:text="Low"
         android:textSize="20sp" />
 
     <androidx.cardview.widget.CardView
@@ -56,7 +55,7 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/button"
+                android:id="@+id/tvcancel"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
