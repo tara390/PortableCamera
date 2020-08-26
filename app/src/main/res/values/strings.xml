@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Screen Recoder</string>
+    <string name="setting">Settings</string>
+
+    //Recording Parameters(Setting)
+    <string name="videoswithhigher">Videos with higher resolution look sharper</string>
+    <string name="videoquality">Higher quality means bigger file size</string>
+    <string name="orientation">Orientation of recorded videos</string>
+    <string name="recordaudio">Record Audio</string>
+    <string name="soundrecord">Sound record or not</string>
+    <string name="audio_camera_setting"><![CDATA[AUDIO & CAMERA SETTING]]></string>
+    <string name="filelocation">File Location</string>
+
+    <string name="camerafaces">Camera view</string>
+
+    <string name="appintro">App Introduction</string>
+    <string name="othersetting">OTHER SETTING</string>
+
+</resources>
