@@ -31,7 +31,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv800480"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

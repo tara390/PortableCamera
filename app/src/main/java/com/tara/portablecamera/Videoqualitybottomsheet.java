@@ -15,10 +15,13 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 
-public class Videoqualitybottomsheet extends BottomSheetDialogFragment implements View.OnClickListener {
-    String videoHD, videomedium, videlow;
-    TextView tvhd, tvmedium, tvlow,btncancel;
+
+public class Videoqualitybottomsheet extends BottomSheetDialogFragment {
+    String[] videoquality;
+    TextView tvhd,tvvideomedium,tvvideolow,btncancel;
     @Override
 
     public View onCreateView(LayoutInflater inflater, @Nullable
@@ -28,20 +31,42 @@ public class Videoqualitybottomsheet extends BottomSheetDialogFragment implement
                 container, false);
         init(v);
 
+        getAllList();
+
         return v;
+    }
+
+    private void getAllList() {
+        ArrayList<String> mylist =new ArrayList<String>();
+        mylist.add("HD");
+        mylist.add("Medium");
+        mylist.add("Low");
+
+
+        final ArrayList<TextView>text=new ArrayList<TextView>(Arrays.asList(tvhd,tvvideolow,tvvideomedium));
+        for (int i=0;i<mylist.size();i++){
+            text.get(i).setText(mylist.get(i));
+
+            final int finalI = i;
+            text.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String video=text.get(finalI).getText().toString();
+                    Intent i=new Intent(getContext(),SettingActivity.class);
+                    i.putExtra("video",video);
+                    startActivity(i);
+                }
+            });
+
+        }
+
     }
 
     private void init(View v) {
 
-        tvhd = v.findViewById(R.id.tvhd);
-        tvlow = v.findViewById(R.id.tvLow);
-        tvmedium = v.findViewById(R.id.tvmedium);
 
         btncancel=v.findViewById(R.id.tvcancel);
-        tvhd.setOnClickListener(this);
-        tvmedium.setOnClickListener(this);
-        tvlow.setOnClickListener(this);
-
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,24 +74,14 @@ public class Videoqualitybottomsheet extends BottomSheetDialogFragment implement
             }
         });
 
+        tvhd=v.findViewById(R.id.tvhd);
+        tvvideolow=v.findViewById(R.id.tvLow);
+        tvvideomedium=v.findViewById(R.id.tvmedium);
+
+
+
 
     }
 
-    @Override
-    public void onClick(View v) {
 
-        videomedium = tvmedium.getText().toString();
-        videoHD = tvhd.getText().toString();
-        videlow = tvlow.getText().toString();
-
-        Intent intent = new Intent(getContext(), SettingActivity.class);
-
-        Bundle extras = new Bundle();
-        extras.putString("videoHD",videoHD);
-        extras.putString("videoMedium",videomedium);
-        extras.putString("video",videlow);
-        intent.putExtras(extras);
-        startActivity(intent);
-
-    }
 }

@@ -1,5 +1,6 @@
 package com.tara.portablecamera;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -12,6 +13,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class Orientationbottomsheet extends BottomSheetDialogFragment {
@@ -26,8 +30,36 @@ public class Orientationbottomsheet extends BottomSheetDialogFragment {
         View v = inflater.inflate(R.layout.fragment_orientationbottomsheet,
                 container, false);
         init(v);
+        getAllList();
 
         return v;
+    }
+
+    private void getAllList() {
+        ArrayList<String> mylist =new ArrayList<String>();
+        mylist.add("Auto");
+        mylist.add("Landscape");
+        mylist.add("Portrait");
+
+
+        final ArrayList<TextView>text=new ArrayList<TextView>(Arrays.asList(tvauto,tvlandscape,tvportrait));
+        for (int i=0;i<mylist.size();i++){
+            text.get(i).setText(mylist.get(i));
+
+            final int finalI = i;
+            text.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String orientation=text.get(finalI).getText().toString();
+                    Intent i=new Intent(getContext(),SettingActivity.class);
+                    i.putExtra("orientation",orientation);
+                    startActivity(i);
+                }
+            });
+
+        }
+
     }
 
     private void init(View v) {

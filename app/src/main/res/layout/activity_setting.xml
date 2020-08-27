@@ -187,33 +187,14 @@
                         android:padding="10dp">
 
                         <TextView
-                            android:id="@+id/tvvideolow"
+                            android:id="@+id/tvvideoq"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:visibility="gone"
                             android:hint="HD"
                             android:textSize="13sp" />
 
-                        <TextView
-                            android:id="@+id/tvvideomedium"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="5dp"
-                            android:visibility="gone"
-                            android:hint="HD"
-                            android:textSize="13sp" />
-                        <TextView
-                            android:id="@+id/tvvideohd"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginRight="5dp"
-                            android:visibility="visible"
-                            android:hint="HD"
-                            android:textSize="13sp" />
 
                         <ImageView
                             android:id="@+id/ivdone"
