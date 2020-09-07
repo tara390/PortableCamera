@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".SettingActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -424,12 +425,12 @@
                         android:padding="10dp">
 
                         <TextView
-                            android:id="@+id/tvfacing"
+                            android:id="@+id/tvcamera"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:hint="Front"
+                            android:hint="Front View"
                             android:textSize="13sp" />
 
                         <ImageView

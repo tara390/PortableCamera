@@ -4,15 +4,17 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:state_pressed">true</item>
+        <item name="android:state_focused">true</item>
+
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="Mytheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/coloryellow</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:state_pressed">true</item>
+        <item name="android:state_focused">true</item>
         <item name="colorPrimaryDark">@color/colorblue</item>
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
         <item name="colorAccent">@color/coloryellow</item>

@@ -21,23 +21,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class Videoqualitybottomsheet extends BottomSheetDialogFragment implements View.OnClickListener {
+public class CameraViewBottomSheet extends BottomSheetDialogFragment implements View.OnClickListener {
 
-    TextView tvhd, tvvideomedium, tvvideolow, btncancel;
-    private ItemClickListenerv mListener;
+    TextView tvfrontfacing, tvbackfacing, btncancel;
+    private ItemClickListenercamera mListener;
 
-    public static Videoqualitybottomsheet newInstance() {
-        return new Videoqualitybottomsheet();
+    public static CameraViewBottomSheet newInstance() {
+        return new CameraViewBottomSheet();
     }
-
     @Override
-
     public View onCreateView(LayoutInflater inflater, @Nullable
             ViewGroup container, @Nullable Bundle savedInstanceState) {
         setStyle(DialogFragment.STYLE_NO_FRAME, R.style.AppBottomSheetDialogTheme);
 
-            return inflater.inflate(R.layout.fragment_videoqualitybottomsheet, container, false);
+        return inflater.inflate(R.layout.fragment_camera_view_bottom_sheet, container, false);
     }
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -45,11 +45,15 @@ public class Videoqualitybottomsheet extends BottomSheetDialogFragment implement
         init(view);
     }
 
+    private void init(View view) {
+        //Textview
+        tvfrontfacing = view.findViewById(R.id.tvfrontview);
+        tvbackfacing = view.findViewById(R.id.tvbackview);
 
-    private void init(View v) {
+        tvfrontfacing.setOnClickListener(this);
+        tvbackfacing.setOnClickListener(this);
 
-
-        btncancel = v.findViewById(R.id.tvcancel);
+        btncancel = view.findViewById(R.id.btncancel);
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,22 +61,15 @@ public class Videoqualitybottomsheet extends BottomSheetDialogFragment implement
             }
         });
 
-        tvhd = v.findViewById(R.id.tvhd);
-        tvvideolow = v.findViewById(R.id.tvLow);
-        tvvideomedium = v.findViewById(R.id.tvmedium);
-
-        tvhd.setOnClickListener(this);
-        tvvideolow.setOnClickListener(this);
-        tvvideomedium.setOnClickListener(this);
-
-
     }
+
+
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof Videoqualitybottomsheet.ItemClickListenerv) {
-            mListener = (Videoqualitybottomsheet.ItemClickListenerv) context;
+        if (context instanceof ItemClickListenercamera) {
+            mListener = (ItemClickListenercamera) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement ItemClickListener");
@@ -87,13 +84,13 @@ public class Videoqualitybottomsheet extends BottomSheetDialogFragment implement
 
     @Override
     public void onClick(View v) {
-
-        TextView tvvideoq = (TextView) v;
-        mListener.onItemClickv(tvvideoq.getText().toString());
+        TextView tvcamera=(TextView)v;
+        mListener.onItemClickcamera(tvcamera.getText().toString());
         dismiss();
 
     }
-    public interface ItemClickListenerv {
-        void onItemClickv(String item1);
+
+    public interface ItemClickListenercamera{
+        void onItemClickcamera(String item);
     }
 }
