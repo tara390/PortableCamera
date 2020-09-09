@@ -15,40 +15,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Mytheme">
-        <activity android:name=".SplashScreenActivity"
-            android:noHistory="true"
+        <activity android:name=".VideoStartPlayer"></activity>
+        <activity
+            android:name=".SplashScreenActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name=".GenericFileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_path" />
-        </provider>
-
-
-        <activity android:name=".SettingActivity"
-            android:noHistory="true"
+        <activity
+            android:name=".SettingActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:launchMode="singleTask">
-
-        </activity>
-        <activity android:name=".MainActivity"
-            android:noHistory="true"
+            android:launchMode="singleTask"
+            android:noHistory="true"></activity>
+        <activity
+            android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:launchMode="singleTask">
-
-        </activity>
+            android:launchMode="singleTask"
+            android:noHistory="true"></activity>
     </application>
 
 </manifest>

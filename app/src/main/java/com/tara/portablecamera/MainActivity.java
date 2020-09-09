@@ -21,7 +21,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ImageView ivsetting;
-    FloatingActionButton fabopenVideo;
+    Boolean isRotate = false;
+    FloatingActionButton fabopenVideo, fabsettings, fabhome,fabstart;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,82 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
 
-        ivsetting = findViewById(R.id.ivsetting);
+
+        //Floating button
         fabopenVideo = findViewById(R.id.openVideo);
+        fabsettings=findViewById(R.id.fabsetting);
+        fabhome=findViewById(R.id.fabhoms);
+        fabstart=findViewById(R.id.fabstart);
 
 
+        fabstart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent videostart=new Intent(MainActivity.this,VideoStartPlayer.class);
+                videostart.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(videostart);
+                finish();
+
+            }
+        });
+
+        fabhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home=new Intent(MainActivity.this,MainActivity.class);
+                home.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(home);
+                finish();
+            }
+        });
+
+
+
+        fabsettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent settings=new Intent(MainActivity.this,SettingActivity.class);
+                settings.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(settings);
+                finish();
+            }
+        });
+
+
+
+
+
+
+
+
+
+        ViewAnimation.init(fabsettings);
+        ViewAnimation.init(fabhome);
+        ViewAnimation.init(fabstart);
+        fabopenVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                isRotate = ViewAnimation.rotateFab(view, !isRotate);
+                if (isRotate) {
+                    ViewAnimation.showIn(fabsettings);
+                    ViewAnimation.showIn(fabhome);
+                    ViewAnimation.showIn(fabstart);
+
+                } else {
+                    ViewAnimation.showOut(fabsettings);
+                    ViewAnimation.showOut(fabhome);
+                    ViewAnimation.showOut(fabstart);
+                }
+            }
+
+
+        });
+
+
+        //Image function
+        ivsetting = findViewById(R.id.ivsetting);
         ivsetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
    /* @Override
@@ -74,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-                }
+            }
         }
     }
 }
