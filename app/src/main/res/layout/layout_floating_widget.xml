@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/collapse_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/openVideo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/new_oval"
+            android:contentDescription="@string/setting"
+            android:padding="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
+            android:src="@drawable/video"
+            app:backgroundTint="@color/coloryellow" />
+
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignStart="@id/openVideo"
+            android:background="@drawable/new_oval"
+            android:src="@drawable/ic_baseline_close_24"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+        <!--Icon of floating widget -->
+
+        <RelativeLayout
+            android:id="@+id/expanded_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/fabsetting"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/new_oval"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_settings"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="80dp"
+            app:backgroundTint="@color/coloryellow"
+            app:tint="@color/colorwhite" />
+
+
+
+        <ImageView
+            android:id="@+id/fabstart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/new_oval"
+            android:contentDescription="@string/setting"
+            android:src="@drawable/ic_baseline_slow_motion_video_24"
+            app:backgroundTint="@color/coloryellow" />
+
+        <ImageView
+            android:id="@+id/fabhoms"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/new_oval"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_home_24"
+            app:backgroundTint="@color/coloryellow" />
+
+
+        </RelativeLayout>
+
+
+
+
+</FrameLayout>

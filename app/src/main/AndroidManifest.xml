@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="TASKS"/>
 
     <uses-feature android:name="android.hardware.camera.any" />
 
@@ -15,7 +17,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Mytheme">
-        <activity android:name=".VideoStartPlayer"></activity>
+        <activity android:name=".VideoStartPlayer">
+
+        </activity>
+
+
+        <service
+            android:name=".FloatingViewService"
+            android:enabled="true"
+            android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -31,12 +41,16 @@
             android:name=".SettingActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
-            android:noHistory="true"></activity>
+            android:noHistory="true">
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:launchMode="singleTask"
-            android:noHistory="true"></activity>
+            android:noHistory="true">
+
+        </activity>
     </application>
 
 </manifest>

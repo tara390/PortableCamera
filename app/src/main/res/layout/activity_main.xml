@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorwhite"
-    android:fitsSystemWindows="true"
     android:transitionName="splashlogo"
     tools:context=".MainActivity">
 
@@ -41,7 +40,8 @@
                 android:transitionName="splashlogo"
                 android:textColor="@color/coloryellow"
                 android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="RelativeOverlap" />
 
             <ImageView
                 android:id="@+id/ivsetting"
@@ -50,7 +50,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:padding="10dp"
-                android:src="@drawable/ic_baseline_settings_24" />
+                android:src="@drawable/ic_baseline_settings_24"
+                tools:ignore="ContentDescription"/>
 
 
         </RelativeLayout>
@@ -58,80 +59,10 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbar"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <FrameLayout
-        android:id="@+id/nav_host_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom|end"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
 
 
 
 
-            <include
-                android:layout_width="200dp"
-                android:layout_height="150dp"
-                layout="@layout/activity_floating_layout" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabsetting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fabSize="mini"
-                app:borderWidth="0dp"
-                android:elevation="10dp"
-                app:pressedTranslationZ="10dp"
-                android:backgroundTint="@color/coloryellow"
-                app:tint="@color/colorwhite"
-                android:background="@color/colorwhite"
-                app:rippleColor="@color/colorwhite"
-                android:layout_marginLeft="80dp"
-                android:src="@drawable/ic_baseline_settings_24" />
-
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabhoms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:fabSize="mini"
-                android:layout_marginTop="60dp"
-                app:borderWidth="0dp"
-                android:elevation="10dp"
-                app:pressedTranslationZ="10dp"
-                android:backgroundTint="@color/coloryellow"
-                app:tint="@color/colorwhite"
-                android:background="@color/coloryellow"
-                app:rippleColor="@color/coloryellow"
-                android:layout_marginLeft="80dp"
-                android:src="@drawable/ic_baseline_home_24" />
-
-
-
-
-        </RelativeLayout>
-
-
-    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
